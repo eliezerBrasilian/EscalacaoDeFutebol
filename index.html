@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escalação</title>
+  </head>
+  <body>
+    <header>
+      <p>Escalação Oficial</p>
+    </header>
+    <section>
+      <div class="tabuleiro">
+        <div class="circle goleiro">Goleiro</div>
+        <div class="circle zagueiro-esq">Zagueiro</div>
+        <div class="circle sagueiro-dir">Zagueiro</div>
+        <div class="circle lateral-esq">Lateral</div>
+        <div class="circle lateral-dir">Lateral</div>
+        <div class="circle volante">Volante</div>
+        <div class="circle meia-esq">Meia</div>
+        <div class="circle meia-dir">Meia</div>
+        <div class="circle meia-atacante">Meio Atacante</div>
+        <div class="circle atacante">Atacante</div>
+        <div class="circle centroavante">Centroavante</div>
+      </div>
+      <div class="grid-escalacao-section">
+        <button class="escalar" onclick="showModalSelectPosition()">
+          Escalar
+        </button>
+        <div id="modal-selecao-posicao">
+          <label for="radio1"></label>
+          <input class="input1" id="radio1" name="radio" type="radio" />
+          <label for="radio1"></label>
+          <input class="input2" id="radio1" name="radio" type="radio" />
+          <label for="radio1"></label>
+          <input class="input3" id="radio1" name="radio" type="radio" />
+          <label for="radio1"></label>
+          <input class="input4" id="radio1" name="radio" type="radio" />
+          <p class="posicoes">ATK MEIA DEF GOL</p>
+        </div>
+        <button class="remover" onclick="showModalSelectPosition()">
+          Remover
+        </button>
+      </div>
+    </section>
+    <footer>Criador Eliezer Brasilian</footer>
+  </body>
+</html>

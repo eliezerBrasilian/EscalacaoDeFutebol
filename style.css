@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: yellow;
+  padding: 20px;
+  height: 20px;
+  text-align: center;
+}
+header > p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+.grid-escalacao-section {
+  display: grid;
+  grid-template-areas:
+    "escalar remover"
+    "modal-selecao-posicao modal-selecao-posicao";
+}
+
+#modal-selecao-posicao {
+  grid-area: modal-selecao-posicao;
+  margin-top: 20px;
+  margin-left: 10px;
+  position: fixed;
+  background-color: grey;
+  visibility: hidden;
+  border-radius: 6px;
+  height: 70px;
+  width: 200px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-areas:
+    "input1 input2 input3 input4"
+    "posicoes posicoes posicoes posicoes";
+}
+
+.input1 {
+  grid-area: input1;
+}
+.input2 {
+  grid-area: input2;
+}
+.input3 {
+  grid-area: input3;
+}
+.input4 {
+  grid-area: input4;
+}
+.posicoes {
+  grid-area: posicoes;
+}
+#modal-selecao-posicao > input {
+  height: 40px;
+  width: 30px;
+  gap: 0 40px;
+}
+
+.tabuleiro {
+  display: grid;
+  /* grid-template-columns: auto auto auto auto; */
+  grid-template-areas:
+    "goleiro goleiro goleiro goleiro"
+    "lateral-esq zagueiro-esq zagueiro-dir lateral-dir"
+    "volante volante volante volante"
+    "meia-esq meia-atacante meia-atacante meia-dir"
+    "atacante atacante atacante atacante"
+    "centroavante centroavante centroavante centroavante";
+  margin-top: 20px;
+  height: 500px;
+  width: 400px;
+  background-color: green;
+  border-radius: 6px;
+}
+.escalar {
+  grid-area: escalar;
+  height: 40px;
+  background-color: yellow;
+  margin-top: 20px;
+  margin-left: 40px;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+.remover {
+  grid-area: remover;
+  height: 40px;
+  background-color: yellow;
+  margin-top: 20px;
+  margin-left: 40px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  visibility: hidden;
+}
+.circle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  background-color: white;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goleiro {
+  grid-area: goleiro;
+  margin: 10px auto;
+  /* margin-left: 200px;
+  margin-right: 100px; */
+}
+.lateral-esq {
+  grid-area: lateral-esq;
+  margin-left: 27px;
+}
+.lateral-dir {
+  grid-area: lateral-dir;
+}
+.zagueiro-esq {
+  grid-area: zagueiro-esq;
+}
+.zagueiro-dir {
+  grid-area: zagueiro-dir;
+}
+.volante {
+  grid-area: volante;
+  margin: 0 auto;
+}
+.meia-esq {
+  grid-area: meia-esq;
+  margin-left: 27px;
+}
+.meia-dir {
+  grid-area: meia-dir;
+}
+.meia-atacante {
+  grid-area: meia-atacante;
+  margin: 0 auto;
+}
+.atacante {
+  grid-area: atacante;
+  margin-left: 250px;
+  margin-right: 20px;
+}
+.centroavante {
+  grid-area: centroavante;
+  margin: 0 auto;
+}
+
+footer {
+  margin-top: 100px;
+  background-color: yellow;
+  padding: 20px;
+  height: 20px;
+  text-align: center;
+}
