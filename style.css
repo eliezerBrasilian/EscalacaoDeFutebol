@@ -112,6 +112,9 @@ section {
   width: 400px;
   background-color: green;
   border-radius: 6px;
+  border-color: white;
+  border-width: 0.5px;
+  border-style: solid;
 }
 .escalar {
   grid-area: escalar;
@@ -127,7 +130,7 @@ section {
   height: 40px;
   background-color: yellow;
   margin-top: 20px;
-  margin-left: 40px;
+  margin-left: 100px;
   padding: 10px 20px;
   border-radius: 6px;
   visibility: hidden;

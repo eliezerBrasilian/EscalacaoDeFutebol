@@ -20,6 +20,10 @@
         <p>Escalação Oficial</p>
       </header>
       <section>
+        <div class="escalacao-esq-dom">
+          <h1>Escalação</h1>
+          <ul id="inputs"></ul>
+        </div>
         <div class="tabuleiro">
           <div class="circle goleiro">goleiro</div>
           <div class="circle ala-esq">ala-esq</div>
@@ -28,7 +32,11 @@
           <div class="circle atacante">atacante</div>
         </div>
         <div class="grid-escalacao-section">
-          <button class="escalar" onclick="showModalSelectPosition()">
+          <button
+            id="escalar"
+            class="escalar"
+            onclick="showModalSelectPosition()"
+          >
             Escalar
           </button>
           <div id="modal-selecao-posicao">
@@ -92,7 +100,11 @@
             </form>
             <button onclick="atualizaNoTabuleiro()">ESCALAR NO TIME</button>
           </div>
-          <button class="remover" onclick="showModalSelectPosition()">
+          <button
+            id="remover"
+            class="remover"
+            onclick="showModalSelectPosition()"
+          >
             Remover
           </button>
         </div>

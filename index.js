@@ -1,13 +1,14 @@
 function showModalSelectPosition() {
   document.getElementById("modal-selecao-posicao").style.visibility = "visible";
+  document.getElementById("escalar").style.visibility = "hidden";
 }
 
+//variaveis de controle
 let atacante = 0;
-let meia = 1;
-let defensor = 2;
-let goleiro = 3;
-let atacantesMaximos = 2;
-let cont_atacantes = 0;
+let central = 0;
+let ala_esquerda = 0;
+let ala_direita = 0;
+let goleiro = 0;
 
 function whichRadiusIsSelected() {
   let ativa = false;
@@ -54,28 +55,93 @@ function atualizaNoTabuleiro() {
   var classeAlaDir = document.getElementsByClassName("ala-dir");
   var classeGoleiro = document.getElementsByClassName("goleiro");
   const nomeJogadorinput = document.getElementById("nome_jogador").value;
+  const numeroCamisaInput = document.getElementById("numero_camisa").value;
+  //atualizandoa a esquerda do tabuleiro
+  const ul = document.getElementById("inputs");
 
   if (document.getElementById("atk").checked)
     for (var i = 0; i < classeAtacante.length; i++) {
-      classeAtacante[i].innerHTML = nomeJogadorinput;
+      //contador atacantes
+      atacante++;
+      ativaRemocao(atacante);
+      //controle para criar um unico atacante no DOM
+      if (atacante <= 1) {
+        classeAtacante[i].innerHTML = nomeJogadorinput;
+        const li = document.createElement("li");
+        li.innerText =
+          "Atacante: " + nomeJogadorinput + ", camisa: " + numeroCamisaInput;
+        ul.appendChild(li);
+      }
     }
   else if (document.getElementById("central").checked)
     for (var i = 0; i < classeCentral.length; i++) {
-      classeCentral[i].innerHTML = nomeJogadorinput;
+      //contador centrais
+      central++;
+      ativaRemocao(central);
+      //controle pra criar um unico central no DOM
+      if (central <= 1) {
+        classeCentral[i].innerHTML = nomeJogadorinput;
+        const li = document.createElement("li");
+        li.innerText =
+          "Central: " + nomeJogadorinput + ", camisa: " + numeroCamisaInput;
+        ul.appendChild(li);
+      }
     }
   else if (document.getElementById("def_esq").checked)
     for (var i = 0; i < classeAlaEsq.length; i++) {
-      classeAlaEsq[i].innerHTML = nomeJogadorinput;
+      //contador ala esquerdo
+      ala_esquerda++;
+      ativaRemocao(ala_esquerda);
+      //controle para criar um unico ala esquerdo no DOM
+      if (ala_esquerda <= 1) {
+        classeAlaEsq[i].innerHTML = nomeJogadorinput;
+        const li = document.createElement("li");
+        li.innerText =
+          "Ala Esquerdo: " +
+          nomeJogadorinput +
+          ", camisa: " +
+          numeroCamisaInput;
+        ul.appendChild(li);
+      }
     }
   else if (document.getElementById("def_dir").checked)
     for (var i = 0; i < classeAlaDir.length; i++) {
-      classeAlaDir[i].innerHTML = nomeJogadorinput;
+      //contador ala direita
+      ala_direita++;
+      ativaRemocao(ala_direita);
+      //controle para criar um unico ala direita no DOM
+      if (ala_direita <= 1) {
+        classeAlaDir[i].innerHTML = nomeJogadorinput;
+        const li = document.createElement("li");
+        li.innerText =
+          "Ala Direita: " + nomeJogadorinput + ", camisa: " + numeroCamisaInput;
+        ul.appendChild(li);
+      }
     }
   else if (document.getElementById("gol").checked)
     for (var i = 0; i < classeGoleiro.length; i++) {
-      classeGoleiro[i].innerHTML = nomeJogadorinput;
+      //contador goleiro
+      goleiro++;
+      ativaRemocao(goleiro);
+      if (goleiro >= 1) {
+        classeGoleiro[i].innerHTML = nomeJogadorinput;
+        const li = document.createElement("li");
+        li.innerText =
+          "Goleiro: " + nomeJogadorinput + ", camisa: " + numeroCamisaInput;
+        ul.appendChild(li);
+      }
     }
 
   ativaTelaDeEscalarJogador((ativa = 0));
   document.getElementById("nome_jogador").value = "";
+  document.getElementById("numero_camisa").value = "";
+}
+
+function ativaRemocao(valor) {
+  if (valor > 0) {
+    document.getElementById("remover").style.visibility = "visible";
+    document.getElementById("escalar").style.visibility = "visible";
+    document.getElementById("modal-selecao-posicao").style.visibility =
+      "hidden";
+  }
 }
