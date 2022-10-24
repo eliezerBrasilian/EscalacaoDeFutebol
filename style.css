@@ -4,16 +4,16 @@
 }
 
 header {
+  display: flex;
   background-color: yellow;
   padding: 20px;
-  height: 20px;
-  text-align: center;
+  height: 14px;
+  flex-basis: 100%;
 }
 header > p {
   font-size: 20px;
   font-weight: bold;
 }
-
 section {
   display: flex;
   justify-content: center;
@@ -36,11 +36,10 @@ section {
   height: 70px;
   width: 200px;
   display: grid;
+  column-gap: 2px;
   align-items: center;
   justify-content: center;
-  grid-template-areas:
-    "input1 input2 input3 input4"
-    "posicoes posicoes posicoes posicoes";
+  grid-template-areas: "input1 input2 input3 input4 input5";
 }
 
 .input1 {
@@ -54,6 +53,9 @@ section {
 }
 .input4 {
   grid-area: input4;
+}
+.input5 {
+  grid-area: input5;
 }
 .posicoes {
   grid-area: posicoes;
@@ -89,12 +91,12 @@ section {
   display: grid;
   /* grid-template-columns: auto auto auto auto; */
   grid-template-areas:
-    "goleiro goleiro goleiro goleiro"
-    "lateral-esq zagueiro-esq zagueiro-dir lateral-dir"
-    "volante volante volante volante"
-    "meia-esq meia-atacante meia-atacante meia-dir"
-    "atacante atacante atacante atacante"
-    "centroavante centroavante centroavante centroavante";
+    "goleiro goleiro"
+    "ala-esq ala-dir"
+    "central central"
+    "atacante atacante";
+  align-items: center;
+  justify-content: space-around;
   margin-top: 20px;
   height: 500px;
   width: 400px;
@@ -136,41 +138,19 @@ section {
   /* margin-left: 200px;
   margin-right: 100px; */
 }
-.lateral-esq {
-  grid-area: lateral-esq;
-  margin-left: 27px;
+.ala-esq {
+  grid-area: ala-esq;
 }
-.lateral-dir {
-  grid-area: lateral-dir;
+.ala-dir {
+  grid-area: ala-dir;
 }
-.zagueiro-esq {
-  grid-area: zagueiro-esq;
-}
-.zagueiro-dir {
-  grid-area: zagueiro-dir;
-}
-.volante {
-  grid-area: volante;
+.central {
+  grid-area: central;
   margin: 0 auto;
 }
-.meia-esq {
-  grid-area: meia-esq;
-  margin-left: 27px;
-}
-.meia-dir {
-  grid-area: meia-dir;
-}
-.meia-atacante {
-  grid-area: meia-atacante;
-  margin: 0 auto;
-}
+
 .atacante {
   grid-area: atacante;
-  margin-left: 250px;
-  margin-right: 20px;
-}
-.centroavante {
-  grid-area: centroavante;
   margin: 0 auto;
 }
 

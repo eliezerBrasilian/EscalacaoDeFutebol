@@ -15,22 +15,27 @@ function whichRadiusIsSelected() {
   if (document.getElementById("atk").checked) {
     ativa = true;
     const selectedValue = document.getElementById("atk").value;
-    //alert("Selected Radio Button is: " + selectedValue);
+    alert("Posição selecionada: atacante");
     ativaTelaDeEscalarJogador(ativa);
-  } else if (document.getElementById("meia").checked) {
+  } else if (document.getElementById("central").checked) {
     ativa = true;
-    const selectedValue = document.getElementById("meia").value;
-    alert("Selected Radio Button is: " + selectedValue);
+    const selectedValue = document.getElementById("central").value;
+    alert("Posição selecionada: " + selectedValue);
     ativaTelaDeEscalarJogador(ativa);
-  } else if (document.getElementById("def").checked) {
+  } else if (document.getElementById("def_esq").checked) {
     ativa = true;
-    const selectedValue = document.getElementById("def").value;
-    alert("Selected Radio Button is: " + selectedValue);
+    const selectedValue = document.getElementById("def_esq").value;
+    alert("Posição selecionada: ala esquerda");
+    ativaTelaDeEscalarJogador(ativa);
+  } else if (document.getElementById("def_dir").checked) {
+    ativa = true;
+    const selectedValue = document.getElementById("def_dir").value;
+    alert("Posição selecionada: ala direita");
     ativaTelaDeEscalarJogador(ativa);
   } else if (document.getElementById("gol").checked) {
     ativa = true;
     const selectedValue = document.getElementById("gol").value;
-    alert("Selected Radio Button is: " + selectedValue);
+    alert("Posição selecionada: goleiro");
     ativaTelaDeEscalarJogador(ativa);
   }
 }
@@ -43,10 +48,34 @@ function ativaTelaDeEscalarJogador(ativa) {
       "hidden";
 }
 function atualizaNoTabuleiro() {
-  var myClasses = document.getElementsByClassName("centroavante");
+  var classeAtacante = document.getElementsByClassName("atacante");
+  var classeCentral = document.getElementsByClassName("central");
+  var classeAlaEsq = document.getElementsByClassName("ala-esq");
+  var classeAlaDir = document.getElementsByClassName("ala-dir");
+  var classeGoleiro = document.getElementsByClassName("goleiro");
+  const nomeJogadorinput = document.getElementById("nome_jogador").value;
 
-  for (var i = 0; i < myClasses.length; i++) {
-    myClasses[i].innerHTML = "new content";
-  }
+  if (document.getElementById("atk").checked)
+    for (var i = 0; i < classeAtacante.length; i++) {
+      classeAtacante[i].innerHTML = nomeJogadorinput;
+    }
+  else if (document.getElementById("central").checked)
+    for (var i = 0; i < classeCentral.length; i++) {
+      classeCentral[i].innerHTML = nomeJogadorinput;
+    }
+  else if (document.getElementById("def_esq").checked)
+    for (var i = 0; i < classeAlaEsq.length; i++) {
+      classeAlaEsq[i].innerHTML = nomeJogadorinput;
+    }
+  else if (document.getElementById("def_dir").checked)
+    for (var i = 0; i < classeAlaDir.length; i++) {
+      classeAlaDir[i].innerHTML = nomeJogadorinput;
+    }
+  else if (document.getElementById("gol").checked)
+    for (var i = 0; i < classeGoleiro.length; i++) {
+      classeGoleiro[i].innerHTML = nomeJogadorinput;
+    }
+
   ativaTelaDeEscalarJogador((ativa = 0));
+  document.getElementById("nome_jogador").value = "";
 }

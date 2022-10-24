@@ -14,24 +14,18 @@
     </header>
     <section>
       <div class="tabuleiro">
-        <div class="circle goleiro">Goleiro</div>
-        <div class="circle zagueiro-esq">Zagueiro</div>
-        <div class="circle sagueiro-dir">Zagueiro</div>
-        <div class="circle lateral-esq">Lateral</div>
-        <div class="circle lateral-dir">Lateral</div>
-        <div class="circle volante">Volante</div>
-        <div class="circle meia-esq">Meia</div>
-        <div class="circle meia-dir">Meia</div>
-        <div class="circle meia-atacante">Meio Atacante</div>
-        <div class="circle atacante">Atacante</div>
-        <div class="circle centroavante">Centroavante</div>
+        <div class="circle goleiro">goleiro</div>
+        <div class="circle ala-esq">ala-esq</div>
+        <div class="circle ala-dir">ala-dir</div>
+        <div class="circle central">central</div>
+        <div class="circle atacante">atacante</div>
       </div>
       <div class="grid-escalacao-section">
         <button class="escalar" onclick="showModalSelectPosition()">
           Escalar
         </button>
         <div id="modal-selecao-posicao">
-          <label for="radio1"></label>
+          <label for="radio1">AT</label>
           <input
             onclick=" whichRadiusIsSelected()"
             class="input1"
@@ -40,42 +34,54 @@
             type="radio"
             value="atk"
           />
-          <label for="radio1"></label>
+          <label for="radio2">CE</label>
           <input
             onclick=" whichRadiusIsSelected()"
             class="input2"
-            id="meia"
+            id="central"
             name="radio"
             type="radio"
-            value="meia"
+            value="central"
           />
-          <label for="radio1"></label>
+          <label for="radio3">AE</label>
           <input
             onclick=" whichRadiusIsSelected()"
             class="input3"
-            id="def"
+            id="def_esq"
             name="radio"
             type="radio"
-            value="def"
+            value="def_esq"
           />
-          <label for="radio1"></label>
+          <label for="radio4">AD</label>
           <input
             onclick=" whichRadiusIsSelected()"
             class="input4"
+            id="def_dir"
+            name="radio"
+            type="radio"
+            value="def_dir"
+          />
+          <label for="radio5">GO</label>
+          <input
+            onclick=" whichRadiusIsSelected()"
+            class="input5"
             id="gol"
             name="radio"
             type="radio"
             value="gol"
           />
-          <p class="posicoes">ATK MEIA DEF GOL</p>
         </div>
         <div id="tela-de_escalar-no-time">
           <p class="titleJogador">JOGADOR</p>
           <form class="form" action="/action_page.php">
             <label for="username">Nome:</label>
-            <input type="text" id="username" name="username" /><br />
+            <input type="text" id="nome_jogador" name="nome_jogador" /><br />
             <label for="quantity">Numero:</label>
-            <input type="number" id="quantity" name="quantity" /><br />
+            <input
+              type="number"
+              id="numero_camisa"
+              name="numero_camisa"
+            /><br />
           </form>
           <button onclick="atualizaNoTabuleiro()">ESCALAR NO TIME</button>
         </div>
