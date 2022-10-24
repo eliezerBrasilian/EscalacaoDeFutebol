@@ -32,14 +32,52 @@
         </button>
         <div id="modal-selecao-posicao">
           <label for="radio1"></label>
-          <input class="input1" id="radio1" name="radio" type="radio" />
+          <input
+            onclick=" whichRadiusIsSelected()"
+            class="input1"
+            id="atk"
+            name="radio"
+            type="radio"
+            value="atk"
+          />
           <label for="radio1"></label>
-          <input class="input2" id="radio1" name="radio" type="radio" />
+          <input
+            onclick=" whichRadiusIsSelected()"
+            class="input2"
+            id="meia"
+            name="radio"
+            type="radio"
+            value="meia"
+          />
           <label for="radio1"></label>
-          <input class="input3" id="radio1" name="radio" type="radio" />
+          <input
+            onclick=" whichRadiusIsSelected()"
+            class="input3"
+            id="def"
+            name="radio"
+            type="radio"
+            value="def"
+          />
           <label for="radio1"></label>
-          <input class="input4" id="radio1" name="radio" type="radio" />
+          <input
+            onclick=" whichRadiusIsSelected()"
+            class="input4"
+            id="gol"
+            name="radio"
+            type="radio"
+            value="gol"
+          />
           <p class="posicoes">ATK MEIA DEF GOL</p>
+        </div>
+        <div id="tela-de_escalar-no-time">
+          <p class="titleJogador">JOGADOR</p>
+          <form class="form" action="/action_page.php">
+            <label for="username">Nome:</label>
+            <input type="text" id="username" name="username" /><br />
+            <label for="quantity">Numero:</label>
+            <input type="number" id="quantity" name="quantity" /><br />
+          </form>
+          <button onclick="atualizaNoTabuleiro()">ESCALAR NO TIME</button>
         </div>
         <button class="remover" onclick="showModalSelectPosition()">
           Remover

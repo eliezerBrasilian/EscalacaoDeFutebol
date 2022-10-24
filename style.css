@@ -64,6 +64,27 @@ section {
   gap: 0 40px;
 }
 
+#tela-de_escalar-no-time {
+  visibility: hidden;
+  margin-top: 100px;
+  margin-left: 10px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: grey;
+  width: 200px;
+  height: 200px;
+  row-gap: 10px;
+  align-items: center;
+  border-radius: 6px;
+  transition: 2ms;
+}
+
+.form {
+  padding-left: 15px;
+}
+
 .tabuleiro {
   display: grid;
   /* grid-template-columns: auto auto auto auto; */
