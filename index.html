@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
     <script src="./index.js"></script>
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
@@ -9,87 +15,89 @@
     <title>Escalação</title>
   </head>
   <body>
-    <header>
-      <p>Escalação Oficial</p>
-    </header>
-    <section>
-      <div class="tabuleiro">
-        <div class="circle goleiro">goleiro</div>
-        <div class="circle ala-esq">ala-esq</div>
-        <div class="circle ala-dir">ala-dir</div>
-        <div class="circle central">central</div>
-        <div class="circle atacante">atacante</div>
-      </div>
-      <div class="grid-escalacao-section">
-        <button class="escalar" onclick="showModalSelectPosition()">
-          Escalar
-        </button>
-        <div id="modal-selecao-posicao">
-          <label for="radio1">AT</label>
-          <input
-            onclick=" whichRadiusIsSelected()"
-            class="input1"
-            id="atk"
-            name="radio"
-            type="radio"
-            value="atk"
-          />
-          <label for="radio2">CE</label>
-          <input
-            onclick=" whichRadiusIsSelected()"
-            class="input2"
-            id="central"
-            name="radio"
-            type="radio"
-            value="central"
-          />
-          <label for="radio3">AE</label>
-          <input
-            onclick=" whichRadiusIsSelected()"
-            class="input3"
-            id="def_esq"
-            name="radio"
-            type="radio"
-            value="def_esq"
-          />
-          <label for="radio4">AD</label>
-          <input
-            onclick=" whichRadiusIsSelected()"
-            class="input4"
-            id="def_dir"
-            name="radio"
-            type="radio"
-            value="def_dir"
-          />
-          <label for="radio5">GO</label>
-          <input
-            onclick=" whichRadiusIsSelected()"
-            class="input5"
-            id="gol"
-            name="radio"
-            type="radio"
-            value="gol"
-          />
+    <div class="flex-container">
+      <header>
+        <p>Escalação Oficial</p>
+      </header>
+      <section>
+        <div class="tabuleiro">
+          <div class="circle goleiro">goleiro</div>
+          <div class="circle ala-esq">ala-esq</div>
+          <div class="circle ala-dir">ala-dir</div>
+          <div class="circle central">central</div>
+          <div class="circle atacante">atacante</div>
         </div>
-        <div id="tela-de_escalar-no-time">
-          <p class="titleJogador">JOGADOR</p>
-          <form class="form" action="/action_page.php">
-            <label for="username">Nome:</label>
-            <input type="text" id="nome_jogador" name="nome_jogador" /><br />
-            <label for="quantity">Numero:</label>
+        <div class="grid-escalacao-section">
+          <button class="escalar" onclick="showModalSelectPosition()">
+            Escalar
+          </button>
+          <div id="modal-selecao-posicao">
+            <label for="radio1">AT</label>
             <input
-              type="number"
-              id="numero_camisa"
-              name="numero_camisa"
-            /><br />
-          </form>
-          <button onclick="atualizaNoTabuleiro()">ESCALAR NO TIME</button>
+              onclick=" whichRadiusIsSelected()"
+              class="input1"
+              id="atk"
+              name="radio"
+              type="radio"
+              value="atk"
+            />
+            <label for="radio2">CE</label>
+            <input
+              onclick=" whichRadiusIsSelected()"
+              class="input2"
+              id="central"
+              name="radio"
+              type="radio"
+              value="central"
+            />
+            <label for="radio3">AE</label>
+            <input
+              onclick=" whichRadiusIsSelected()"
+              class="input3"
+              id="def_esq"
+              name="radio"
+              type="radio"
+              value="def_esq"
+            />
+            <label for="radio4">AD</label>
+            <input
+              onclick=" whichRadiusIsSelected()"
+              class="input4"
+              id="def_dir"
+              name="radio"
+              type="radio"
+              value="def_dir"
+            />
+            <label for="radio5">GO</label>
+            <input
+              onclick=" whichRadiusIsSelected()"
+              class="input5"
+              id="gol"
+              name="radio"
+              type="radio"
+              value="gol"
+            />
+          </div>
+          <div id="tela-de_escalar-no-time">
+            <p class="titleJogador">JOGADOR</p>
+            <form class="form" action="/action_page.php">
+              <label for="username">Nome:</label>
+              <input type="text" id="nome_jogador" name="nome_jogador" /><br />
+              <label for="quantity">Numero:</label>
+              <input
+                type="number"
+                id="numero_camisa"
+                name="numero_camisa"
+              /><br />
+            </form>
+            <button onclick="atualizaNoTabuleiro()">ESCALAR NO TIME</button>
+          </div>
+          <button class="remover" onclick="showModalSelectPosition()">
+            Remover
+          </button>
         </div>
-        <button class="remover" onclick="showModalSelectPosition()">
-          Remover
-        </button>
-      </div>
-    </section>
-    <footer>Criador Eliezer Brasilian</footer>
+      </section>
+      <footer>Criador Eliezer Brasilian</footer>
+    </div>
   </body>
 </html>

@@ -1,22 +1,32 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-
+.flex-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 header {
   display: flex;
   background-color: yellow;
-  padding: 20px;
-  height: 14px;
+  padding: 30px;
+  height: 40px;
   flex-basis: 100%;
 }
 header > p {
   font-size: 20px;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
 }
 section {
   display: flex;
   justify-content: center;
+  flex: 1 0 auto;
+  background-image: url("./images/soccer_wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .grid-escalacao-section {
   display: grid;
@@ -155,9 +165,9 @@ section {
 }
 
 footer {
-  margin-top: 100px;
+  display: flex;
   background-color: yellow;
-  padding: 20px;
-  height: 20px;
-  text-align: center;
+  padding: 30px;
+  height: 40px;
+  flex-basis: 100%;
 }
