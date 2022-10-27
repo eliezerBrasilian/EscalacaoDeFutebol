@@ -84,9 +84,7 @@ function escalarNoTime() {
         ul.appendChild(li);
       }
     }
-  }
-  /*
-  else if (document.getElementById("central").checked)
+  } else if (document.getElementById("central").checked)
     for (var i = 0; i < classeCentral.length; i++) {
       //contador centrais
       central++;
@@ -153,7 +151,6 @@ function escalarNoTime() {
         ul.appendChild(li);
       }
     }
-    */
 
   ativaTelaDeEscalarJogador((ativa = 0));
   document.getElementById("nome_jogador").value = "";
