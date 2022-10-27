@@ -17,27 +17,23 @@ function whichRadiusIsSelected() {
 
   if (document.getElementById("atk").checked) {
     ativa = true;
-    const selectedValue = document.getElementById("atk").value;
     alert("Posição selecionada: atacante");
     ativaTelaDeEscalarJogador(ativa);
   } else if (document.getElementById("central").checked) {
     ativa = true;
     const selectedValue = document.getElementById("central").value;
-    alert("Posição selecionada: " + selectedValue);
+    alert("Posição selecionada: central");
     ativaTelaDeEscalarJogador(ativa);
   } else if (document.getElementById("def_esq").checked) {
     ativa = true;
-    const selectedValue = document.getElementById("def_esq").value;
     alert("Posição selecionada: ala esquerda");
     ativaTelaDeEscalarJogador(ativa);
   } else if (document.getElementById("def_dir").checked) {
     ativa = true;
-    const selectedValue = document.getElementById("def_dir").value;
     alert("Posição selecionada: ala direita");
     ativaTelaDeEscalarJogador(ativa);
   } else if (document.getElementById("gol").checked) {
     ativa = true;
-    const selectedValue = document.getElementById("gol").value;
     alert("Posição selecionada: goleiro");
     ativaTelaDeEscalarJogador(ativa);
   }
@@ -69,10 +65,9 @@ function escalarNoTime() {
       //contador atacantes
       atacante++;
       ativaBotaoDeRemocao(atacante);
-      //controle para criar um unico atacante no DOM
 
+      //controle para criar um unico atacante no DOM
       if (atacante <= 1) {
-        // alert("Estive aqui");
         classeAtacante[i].innerHTML = nomeJogadorinput;
         const li = document.createElement("li");
         li.innerText =
@@ -80,7 +75,7 @@ function escalarNoTime() {
           nomeJogadorinput +
           ", camisa: " +
           numeroCamisaInput[index_numeroCamisaInput];
-        li.className = toString(numeroCamisaInput[index_numeroCamisaInput]);
+        li.id = "camisa-" + numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }
@@ -165,11 +160,14 @@ function ocultaButtonOnTop() {
 }
 function removerJogadorDoTime() {
   const numeroCamisa = document.getElementById("numero_camisa_to_delete").value;
+  const jogadorQueSeraRemovido = document.getElementById(
+    "camisa-" + numeroCamisa
+  );
 
-  const li = [...document.querySelectorAll("li")];
-  li.forEach((elem) => {
-    if (elem.innerText == numeroCamisa) elem.parentNode.removeChild(elem);
-  });
+  jogadorQueSeraRemovido.remove();
+
+  //limpando buffer do input
+  document.getElementById("numero_camisa_to_delete").value = "";
 }
 
 function ativaBotaoDeRemocao(valor) {
