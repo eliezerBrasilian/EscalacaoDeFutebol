@@ -127,6 +127,9 @@ section {
 }
 .remover {
   grid-area: remover;
+}
+.remover-button-ontop {
+  grid-area: remover;
   height: 40px;
   background-color: yellow;
   margin-top: 20px;
@@ -165,6 +168,24 @@ section {
 .atacante {
   grid-area: atacante;
   margin: 0 auto;
+}
+
+.tela-de-remocao {
+  display: flex;
+  margin: 10px;
+  width: 300px;
+  row-gap: 10px;
+  flex-direction: column;
+  background-color: red;
+  padding: 20px;
+  visibility: hidden;
+  margin-left: 100px;
+}
+.removerJogadorDoTimeBtn {
+  padding: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: burlywood;
 }
 
 footer {

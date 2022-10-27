@@ -9,6 +9,8 @@ let central = 0;
 let ala_esquerda = 0;
 let ala_direita = 0;
 let goleiro = 0;
+let numeroCamisaInput = new Array(5);
+let index_numeroCamisaInput = 0;
 
 function whichRadiusIsSelected() {
   let ativa = false;
@@ -48,31 +50,42 @@ function ativaTelaDeEscalarJogador(ativa) {
     document.getElementById("tela-de_escalar-no-time").style.visibility =
       "hidden";
 }
-function atualizaNoTabuleiro() {
+function escalarNoTime() {
   var classeAtacante = document.getElementsByClassName("atacante");
   var classeCentral = document.getElementsByClassName("central");
   var classeAlaEsq = document.getElementsByClassName("ala-esq");
   var classeAlaDir = document.getElementsByClassName("ala-dir");
   var classeGoleiro = document.getElementsByClassName("goleiro");
   const nomeJogadorinput = document.getElementById("nome_jogador").value;
-  const numeroCamisaInput = document.getElementById("numero_camisa").value;
+  numeroCamisaInput[index_numeroCamisaInput] =
+    document.getElementById("numero_camisa").value;
+  //alert("camisa: " + numeroCamisaInput[index_numeroCamisaInput]);
+
   //atualizandoa a esquerda do tabuleiro
   const ul = document.getElementById("inputs");
 
-  if (document.getElementById("atk").checked)
+  if (document.getElementById("atk").checked) {
     for (var i = 0; i < classeAtacante.length; i++) {
       //contador atacantes
       atacante++;
-      ativaRemocao(atacante);
+      ativaBotaoDeRemocao(atacante);
       //controle para criar um unico atacante no DOM
+
       if (atacante <= 1) {
+        // alert("Estive aqui");
         classeAtacante[i].innerHTML = nomeJogadorinput;
         const li = document.createElement("li");
         li.innerText =
-          "Atacante: " + nomeJogadorinput + ", camisa: " + numeroCamisaInput;
+          "Atacante: " +
+          nomeJogadorinput +
+          ", camisa: " +
+          numeroCamisaInput[index_numeroCamisaInput];
+        li.className = toString(numeroCamisaInput[index_numeroCamisaInput]);
         ul.appendChild(li);
       }
     }
+  }
+  /*
   else if (document.getElementById("central").checked)
     for (var i = 0; i < classeCentral.length; i++) {
       //contador centrais
@@ -83,7 +96,10 @@ function atualizaNoTabuleiro() {
         classeCentral[i].innerHTML = nomeJogadorinput;
         const li = document.createElement("li");
         li.innerText =
-          "Central: " + nomeJogadorinput + ", camisa: " + numeroCamisaInput;
+          "Central: " +
+          nomeJogadorinput +
+          ", camisa: " +
+          numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }
@@ -100,7 +116,7 @@ function atualizaNoTabuleiro() {
           "Ala Esquerdo: " +
           nomeJogadorinput +
           ", camisa: " +
-          numeroCamisaInput;
+          numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }
@@ -114,7 +130,10 @@ function atualizaNoTabuleiro() {
         classeAlaDir[i].innerHTML = nomeJogadorinput;
         const li = document.createElement("li");
         li.innerText =
-          "Ala Direita: " + nomeJogadorinput + ", camisa: " + numeroCamisaInput;
+          "Ala Direita: " +
+          nomeJogadorinput +
+          ", camisa: " +
+          numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }
@@ -127,19 +146,39 @@ function atualizaNoTabuleiro() {
         classeGoleiro[i].innerHTML = nomeJogadorinput;
         const li = document.createElement("li");
         li.innerText =
-          "Goleiro: " + nomeJogadorinput + ", camisa: " + numeroCamisaInput;
+          "Goleiro: " +
+          nomeJogadorinput +
+          ", camisa: " +
+          numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }
+    */
 
   ativaTelaDeEscalarJogador((ativa = 0));
   document.getElementById("nome_jogador").value = "";
   document.getElementById("numero_camisa").value = "";
+
+  index_numeroCamisaInput++;
+}
+function ocultaButtonOnTop() {
+  document.getElementById("remover-button-ontop").style.visibility = "hidden";
+  //mostra tela de remocao abaixo
+  document.getElementById("tela-de-remocao").style.visibility = "visible";
+}
+function removerJogadorDoTime() {
+  const numeroCamisa = document.getElementById("numero_camisa_to_delete").value;
+
+  const li = [...document.querySelectorAll("li")];
+  li.forEach((elem) => {
+    if (elem.innerText == numeroCamisa) elem.parentNode.removeChild(elem);
+  });
 }
 
-function ativaRemocao(valor) {
+function ativaBotaoDeRemocao(valor) {
   if (valor > 0) {
-    document.getElementById("remover").style.visibility = "visible";
+    document.getElementById("remover-button-ontop").style.visibility =
+      "visible";
     document.getElementById("escalar").style.visibility = "visible";
     document.getElementById("modal-selecao-posicao").style.visibility =
       "hidden";

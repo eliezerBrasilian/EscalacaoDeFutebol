@@ -98,15 +98,32 @@
                 name="numero_camisa"
               /><br />
             </form>
-            <button onclick="atualizaNoTabuleiro()">ESCALAR NO TIME</button>
+            <button onclick="escalarNoTime()">ESCALAR NO TIME</button>
           </div>
-          <button
-            id="remover"
-            class="remover"
-            onclick="showModalSelectPosition()"
-          >
-            Remover
-          </button>
+          <div class="remover">
+            <button
+              id="remover-button-ontop"
+              class="remover-button-ontop"
+              onclick="ocultaButtonOnTop()"
+            >
+              Remover
+            </button>
+            <div id="tela-de-remocao" class="tela-de-remocao">
+              <h1 id="title-remocao">Digite o numero da camisa do Jogador:</h1>
+              <input
+                type="number"
+                name="numero_camisa_to_delete"
+                id="numero_camisa_to_delete"
+                placeholder="digite aqui..."
+              />
+              <button
+                onclick="removerJogadorDoTime()"
+                class="removerJogadorDoTimeBtn"
+              >
+                Remover
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       <footer>Criador Eliezer Brasilian</footer>
