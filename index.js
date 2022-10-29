@@ -83,7 +83,7 @@ function escalarNoTime() {
     for (var i = 0; i < classeCentral.length; i++) {
       //contador centrais
       central++;
-      ativaRemocao(central);
+      ativaBotaoDeRemocao(central);
       //controle pra criar um unico central no DOM
       if (central <= 1) {
         classeCentral[i].innerHTML = nomeJogadorinput;
@@ -93,6 +93,7 @@ function escalarNoTime() {
           nomeJogadorinput +
           ", camisa: " +
           numeroCamisaInput[index_numeroCamisaInput];
+        li.id = "camisa-" + numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }
@@ -100,7 +101,7 @@ function escalarNoTime() {
     for (var i = 0; i < classeAlaEsq.length; i++) {
       //contador ala esquerdo
       ala_esquerda++;
-      ativaRemocao(ala_esquerda);
+      ativaBotaoDeRemocao(ala_esquerda);
       //controle para criar um unico ala esquerdo no DOM
       if (ala_esquerda <= 1) {
         classeAlaEsq[i].innerHTML = nomeJogadorinput;
@@ -110,6 +111,7 @@ function escalarNoTime() {
           nomeJogadorinput +
           ", camisa: " +
           numeroCamisaInput[index_numeroCamisaInput];
+        li.id = "camisa-" + numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }
@@ -117,7 +119,7 @@ function escalarNoTime() {
     for (var i = 0; i < classeAlaDir.length; i++) {
       //contador ala direita
       ala_direita++;
-      ativaRemocao(ala_direita);
+      ativaBotaoDeRemocao(ala_direita);
       //controle para criar um unico ala direita no DOM
       if (ala_direita <= 1) {
         classeAlaDir[i].innerHTML = nomeJogadorinput;
@@ -127,6 +129,7 @@ function escalarNoTime() {
           nomeJogadorinput +
           ", camisa: " +
           numeroCamisaInput[index_numeroCamisaInput];
+        li.id = "camisa-" + numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }
@@ -134,7 +137,7 @@ function escalarNoTime() {
     for (var i = 0; i < classeGoleiro.length; i++) {
       //contador goleiro
       goleiro++;
-      ativaRemocao(goleiro);
+      ativaBotaoDeRemocao(goleiro);
       if (goleiro >= 1) {
         classeGoleiro[i].innerHTML = nomeJogadorinput;
         const li = document.createElement("li");
@@ -143,6 +146,7 @@ function escalarNoTime() {
           nomeJogadorinput +
           ", camisa: " +
           numeroCamisaInput[index_numeroCamisaInput];
+        li.id = "camisa-" + numeroCamisaInput[index_numeroCamisaInput];
         ul.appendChild(li);
       }
     }

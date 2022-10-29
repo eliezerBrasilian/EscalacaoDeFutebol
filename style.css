@@ -8,48 +8,46 @@
   min-height: 100vh;
   flex-direction: column;
 }
-header {
+.nav_bar {
   display: flex;
   background-color: yellow;
   padding: 30px;
-  height: 40px;
+  height: 30px;
   flex-basis: 100%;
 }
-header > p {
+.nav_bar_title {
   font-size: 20px;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
 }
-section {
+.main-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   flex: 1 0 auto;
+  row-gap: 10px;
+  padding: 20px;
   background-image: url("./images/soccer_wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-.grid-escalacao-section {
-  display: grid;
-  grid-template-areas:
-    "escalar remover"
-    "modal-selecao-posicao modal-selecao-posicao";
+.jogadores_escalados {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-
-#modal-selecao-posicao {
-  grid-area: modal-selecao-posicao;
-  margin-top: 20px;
-  margin-left: 10px;
-  position: fixed;
-  background-color: grey;
-  visibility: hidden;
+.tela_de_escacar_no_time {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.escalar_button {
+  display: flex;
+  padding: 15px 10px;
+  justify-content: flex-start;
+  height: 10px;
+  background-color: yellow;
   border-radius: 6px;
-  height: 70px;
-  width: 200px;
-  display: grid;
-  column-gap: 2px;
-  align-items: center;
-  justify-content: center;
-  grid-template-areas: "input1 input2 input3 input4 input5";
 }
 
 .input1 {
@@ -70,27 +68,53 @@ section {
 .posicoes {
   grid-area: posicoes;
 }
+
+.botoes_de_adicao_e_remocao {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.modal_e_escalacao {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 10px 0;
+}
+#modal-selecao-posicao {
+  margin-top: 20px;
+  margin: 0 auto;
+  /* position: fixed; */
+  background-color: grey;
+  visibility: hidden;
+  border-radius: 6px;
+  height: 70px;
+  width: 200px;
+  display: grid;
+  column-gap: 2px;
+  align-items: center;
+  justify-content: center;
+  grid-template-areas: "input1 input2 input3 input4 input5";
+}
 #modal-selecao-posicao > input {
   height: 40px;
-  width: 30px;
-  gap: 0 40px;
+  width: 20px;
 }
 
 #tela-de_escalar-no-time {
-  visibility: hidden;
-  margin-top: 100px;
-  margin-left: 10px;
-  position: fixed;
+  /* position: fixed; */
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
+  visibility: hidden;
+  row-gap: 10px;
   background-color: grey;
   width: 200px;
   height: 200px;
-  row-gap: 10px;
   align-items: center;
   border-radius: 6px;
-  transition: 2ms;
 }
 
 .form {
@@ -99,7 +123,6 @@ section {
 
 .tabuleiro {
   display: grid;
-  /* grid-template-columns: auto auto auto auto; */
   grid-template-areas:
     "goleiro goleiro"
     "ala-esq ala-dir"
@@ -108,39 +131,30 @@ section {
   align-items: center;
   justify-content: space-around;
   margin-top: 20px;
-  height: 500px;
-  width: 400px;
+  height: 300px;
+  width: 150px;
   background-color: green;
   border-radius: 6px;
   border-color: white;
   border-width: 0.5px;
   border-style: solid;
 }
-.escalar {
-  grid-area: escalar;
-  height: 40px;
-  background-color: yellow;
-  margin-top: 20px;
-  margin-left: 40px;
-  padding: 10px 20px;
-  border-radius: 6px;
-}
+
 .remover {
   grid-area: remover;
 }
 .remover-button-ontop {
-  grid-area: remover;
-  height: 40px;
+  display: flex;
+  justify-content: right;
+  padding: 15px 10px;
+  height: 10px;
   background-color: yellow;
-  margin-top: 20px;
-  margin-left: 100px;
-  padding: 10px 20px;
   border-radius: 6px;
   visibility: hidden;
 }
 .circle {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 50px;
   background-color: white;
   font-size: 0.8em;
@@ -172,16 +186,17 @@ section {
 
 .tela-de-remocao {
   display: flex;
+  justify-content: center;
   margin: 10px;
-  width: 300px;
-  row-gap: 10px;
+  width: 200px;
+  row-gap: 10px; /*gap interno*/
   flex-direction: column;
   background-color: red;
   padding: 20px;
-  visibility: hidden;
-  margin-left: 100px;
+  /* visibility: hidden; */
+  justify-content: flex-end;
 }
-.removerJogadorDoTimeBtn {
+.tela-de-remocao .removerJogadorDoTimeBtn {
   padding: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
