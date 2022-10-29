@@ -1,6 +1,8 @@
-function showModalSelectPosition() {
-  document.getElementById("modal-selecao-posicao").style.visibility = "visible";
-  document.getElementById("escalar").style.visibility = "hidden";
+function botaoEscalar() {
+  document.getElementById("modal-selecao-posicao").style.display = "grid";
+  document.getElementById("modal_e_escalacao").style.display = "flex";
+  document.getElementById("escalar").style.display = "none";
+  document.getElementById("tela-de-remocao").style.display = "none";
 }
 
 //variaveis de controle
@@ -39,12 +41,15 @@ function whichRadiusIsSelected() {
   }
 }
 function ativaTelaDeEscalarJogador(ativa) {
-  if (ativa)
-    document.getElementById("tela-de_escalar-no-time").style.visibility =
-      "visible";
-  else
-    document.getElementById("tela-de_escalar-no-time").style.visibility =
-      "hidden";
+  const telaDeEscalarNoTime = document.getElementById(
+    "tela-de_escalar-no-time"
+  );
+
+  if (ativa) {
+    //telaDeEscalarNoTime.style.visibility =
+    // "visible";
+    telaDeEscalarNoTime.style.display = "flex";
+  } else telaDeEscalarNoTime.style.display = "none";
 }
 function escalarNoTime() {
   var classeAtacante = document.getElementsByClassName("atacante");
@@ -158,9 +163,9 @@ function escalarNoTime() {
   index_numeroCamisaInput++;
 }
 function ocultaButtonOnTop() {
-  document.getElementById("remover-button-ontop").style.visibility = "hidden";
+  document.getElementById("remover-button-ontop").style.display = "none";
   //mostra tela de remocao abaixo
-  document.getElementById("tela-de-remocao").style.visibility = "visible";
+  document.getElementById("tela-de-remocao").style.display = "flex";
 }
 function removerJogadorDoTime() {
   const numeroCamisa = document.getElementById("numero_camisa_to_delete").value;
@@ -176,10 +181,8 @@ function removerJogadorDoTime() {
 
 function ativaBotaoDeRemocao(valor) {
   if (valor > 0) {
-    document.getElementById("remover-button-ontop").style.visibility =
-      "visible";
-    document.getElementById("escalar").style.visibility = "visible";
-    document.getElementById("modal-selecao-posicao").style.visibility =
-      "hidden";
+    document.getElementById("remover-button-ontop").style.display = "flex";
+    document.getElementById("escalar").style.display = "flex";
+    document.getElementById("modal-selecao-posicao").style.display = "none";
   }
 }
