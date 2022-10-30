@@ -225,7 +225,7 @@ footer {
   flex-basis: 100%;
 }
 
-@media (min-width: 500px) and (max-width: 2600px) {
+@media (min-width: 651px) and (max-width: 2600px) {
   .main-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -251,8 +251,8 @@ footer {
     margin: 0 auto;
   }
 }
-/*
-@media (max-width: 800px) {
+
+@media (max-width: 650px) {
   .main-content {
     justify-content: space-around;
   }
@@ -274,7 +274,7 @@ footer {
     width: 100%;
   }
 }
-*/
+
 @media (max-width: 500px) {
   .jogadores_escalados {
     flex-wrap: nowrap;
