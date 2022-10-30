@@ -47,7 +47,6 @@
 .escalar_button {
   display: flex;
   padding: 15px 10px;
-  justify-content: flex-start;
   height: 10px;
   background-color: yellow;
   border-radius: 6px;
@@ -115,11 +114,10 @@
 
 #tela-de_escalar-no-time {
   display: flex;
-  margin: 0 auto;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   row-gap: 10px;
   /* visibility: hidden; */
   background-color: grey;
@@ -130,7 +128,13 @@
 }
 
 .form {
-  padding-left: 15px;
+  padding: 20px;
+}
+.form #nome_jogador {
+  width: 90%;
+}
+.form #numero_camisa {
+  width: 90%;
 }
 
 .tabuleiro {
